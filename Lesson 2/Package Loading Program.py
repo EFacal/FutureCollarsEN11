@@ -56,7 +56,7 @@ while item_count < max_items:
                 total_weight_sent += current_package_weight
 
             # 7. Print the results
-            print("\nResults:")
+            print("Results:")
             print(f"Number of packages sent: {packages_sent}")
             print(f"Total weight sent: {total_weight_sent} kg")
             print(f"Total unused capacity: {(packages_sent * 20) - total_weight_sent} kg")
