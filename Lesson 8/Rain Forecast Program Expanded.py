@@ -112,11 +112,11 @@ def main():
     while date is None:
         date = get_date()
 
-    result = wf[date]  # 🔥 uses __getitem__
+    result = wf[date]  #uses __getitem__
     interpret(result)
 
     print("\nSaved forecasts:")
-    for d, v in wf.items():  # 🔥 uses items()
+    for d, v in wf.items():  #uses items()
         print(d, "->", v)
 
 
