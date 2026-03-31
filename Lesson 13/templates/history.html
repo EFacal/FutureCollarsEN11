@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>History</title>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+</head>
+<body class="container grid-lg">
+
+<h2>Transaction History</h2>
+
+<form class="form-inline" method="get" action="{{ url_for('show_history') }}">
+    <input class="form-input" type="number" name="line_from" placeholder="From line">
+    <input class="form-input" type="number" name="line_to" placeholder="To line">
+    <button class="btn btn-primary">Filter</button>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Type</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for tx in history %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ tx.type.capitalize() }}</td>
+            <td>{{ tx.details }}</td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="3">No transactions found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{{ url_for('index') }}" class="btn">Back</a>
+
+</body>
+</html>
