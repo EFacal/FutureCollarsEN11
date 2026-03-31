@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Balance Change</h3>
+
+<form method="post">
+    <select name="operation" class="form-select">
+        <option value="add">Add</option>
+        <option value="subtract">Subtract</option>
+    </select><br>
+
+    <input name="amount" placeholder="Amount" class="form-input"><br>
+    <button class="btn btn-warning">Submit</button>
+</form>
+{% endblock %}

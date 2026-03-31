@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>History</h3>
+
+<ul>
+    {% for t in transactions %}
+        <li>
+            {{ t.type }} |
+            {{ t.product_name }} |
+            {{ t.quantity }} |
+            {{ t.amount }}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

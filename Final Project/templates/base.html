@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory Manager</title>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Inventory Manager</h1>
+
+    <a href="/" class="btn">Home</a>
+    <a href="/purchase" class="btn btn-primary">Purchase</a>
+    <a href="/sale" class="btn btn-success">Sale</a>
+    <a href="/balance" class="btn btn-warning">Balance</a>
+    <a href="/history" class="btn">History</a>
+    <a href="/stats" class="btn btn-error">Stats</a>
+
+    <hr>
+
+    {% block content %}{% endblock %}
+</div>
+</body>
+</html>

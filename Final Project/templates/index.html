@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="columns">
+
+    <!-- LEFT: BALANCE CARD -->
+    <div class="column col-4">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title h5">Account Balance</div>
+            </div>
+            <div class="card-body">
+                <h2>{{ balance }} €</h2>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <a href="/purchase" class="btn btn-primary btn-block">➕ Purchase</a>
+            <a href="/sale" class="btn btn-success btn-block">💸 Sale</a>
+            <a href="/balance" class="btn btn-warning btn-block">💰 Change Balance</a>
+            <a href="/history" class="btn btn-link btn-block">📜 View History</a>
+            <a href="/stats" class="btn btn-error btn-block">📊 Statistics</a>
+        </div>
+    </div>
+
+    <!-- RIGHT: INVENTORY TABLE -->
+    <div class="column col-8">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title h5">Inventory</div>
+            </div>
+            <div class="card-body">
+
+                {% if products %}
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for p in products %}
+                        <tr>
+                            <td>{{ p.name }}</td>
+                            <td>{{ p.quantity }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% else %}
+                    <p>No products in inventory.</p>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
