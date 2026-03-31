@@ -1,0 +1,8 @@
+Balance: add 200.0
+Balance: add 300.0
+Balance: add 300.0
+Purchase: Banana, 45, 2.0
+Sale: Banana, 32, 3.0
+Balance: add 400.0
+Purchase: Banana, 45, 1.99
+Sale: Banana, 37, 2.59
